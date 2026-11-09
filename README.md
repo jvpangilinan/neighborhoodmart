@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="https://neighborhoodmart.sbca.online"><b>🌐 Live site</b></a> ·
-  <a href="#-try-the-demo">▶ Try the demo</a> ·
-  <a href="#-getting-started">⚙️ Setup</a> ·
-  <a href="#-project-structure">🗂 Structure</a>
+  <a href="https://neighborhoodmart.sbca.online"><b> Live site</b></a> ·
+  <a href="#-try-the-demo"> Try the demo</a> ·
+  <a href="#-getting-started"> Setup</a> ·
+  <a href="#-project-structure"> Structure</a>
 </p>
 
 <p align="center">
@@ -22,21 +22,21 @@
 
 Bulk packs get split fairly, so everyone gets warehouse prices without buying a whole case. Trip costs like gas and tolls are shared in proportion to each order. The traveler earns a small effort fee, and the HOA admin can see who is verified, where the money went, and how much the community has saved.
 
-## ✨ Features
+##  Features
 
 | | |
 |---|---|
-| 🛒 **Requesters** | Join an open trip, add items, accept or decline substitutes, pay from wallet credit, pick up at home, and see "You saved vs. supermarket". |
-| 🚗 **Travelers** | Post a store run (store, date, vehicle, cut-off time), get a shopping checklist, mark items Bought, upload receipts, and track effort-fee earnings. |
-| 🏠 **HOA Admin** | Verify residents against the HOA master list, approve travelers, confirm wallet top-ups and cash-outs, resolve disputes, post announcements, and view reports and CSV exports. |
-| 📦 **Smart pooling** | Matches requests to vehicle capacity, consolidates partial packs, and either rounds them up or trims them so every bulk box is filled. |
-| 💸 **Fair math** | Each family pays its items, plus its share of trip expenses, plus a tiered effort fee. A refundable 10% buffer is returned after the receipt is entered. |
-| 🔒 **Trust & safety** | HOA residency matching, receipt photos that only the right people can view, a 24-hour pickup rule, and penalties if a traveler drops a locked trip. |
-| 🐶 **Chanelly** | The mascot runs a full guided demo tour, a per-user **Guided mode** that points to the next step, and "Need help?" tips on every screen. |
-| ♿ **Easy to use** | Text size A / A+ / A++, Simple view, High contrast, 44px+ tap targets, plain-word statuses, and "Are you sure?" confirmations. |
-| 📱 **Installable** | It's a PWA with a manifest and service worker, so it can be added to the home screen on Android or iPhone and has an offline page. |
+|  **Requesters** | Join an open trip, add items, accept or decline substitutes, pay from wallet credit, pick up at home, and see "You saved vs. supermarket". |
+|  **Travelers** | Post a store run (store, date, vehicle, cut-off time), get a shopping checklist, mark items Bought, upload receipts, and track effort-fee earnings. |
+|  **HOA Admin** | Verify residents against the HOA master list, approve travelers, confirm wallet top-ups and cash-outs, resolve disputes, post announcements, and view reports and CSV exports. |
+|  **Smart pooling** | Matches requests to vehicle capacity, consolidates partial packs, and either rounds them up or trims them so every bulk box is filled. |
+|  **Fair math** | Each family pays its items, plus its share of trip expenses, plus a tiered effort fee. A refundable 10% buffer is returned after the receipt is entered. |
+|  **Trust & safety** | HOA residency matching, receipt photos that only the right people can view, a 24-hour pickup rule, and penalties if a traveler drops a locked trip. |
+|  **Chanelly** | The mascot runs a full guided demo tour, a per-user **Guided mode** that points to the next step, and "Need help?" tips on every screen. |
+|  **Easy to use** | Text size A / A+ / A++, Simple view, High contrast, 44px+ tap targets, plain-word statuses, and "Are you sure?" confirmations. |
+|  **Installable** | It's a PWA with a manifest and service worker, so it can be added to the home screen on Android or iPhone and has an offline page. |
 
-## 📸 Screenshots
+##  Screenshots
 
 <table>
   <tr>
@@ -55,7 +55,7 @@ Bulk packs get split fairly, so everyone gets warehouse prices without buying a 
 
 <p align="center"><img src="docs/images/mobile.png" alt="NeighborhoodMart on phones" width="85%"></p>
 
-## 🔄 How a trip works
+##  How a trip works
 
 ```mermaid
 flowchart LR
@@ -91,23 +91,23 @@ To explore on your own, use the one-click demo accounts on the login page:
 
 | Role | Username | Password | Who |
 |---|---|---|---|
-| 🏠 HOA Admin | `admin` | `admin123` | Verifies residents and travelers |
-| 🚗 Traveler | `traveler` | `traveler123` | Juan, S&R runs, sedan |
-| 🛒 Requester | `requester` | `requester123` | Maria, ₱5,000 credit |
-| 🛒 Requester 2 | `requester2` | `requester123` | Jose, already in a trip |
+|  HOA Admin | `admin` | `admin123` | Verifies residents and travelers |
+|  Traveler | `traveler` | `traveler123` | Juan, S&R runs, sedan |
+|  Requester | `requester` | `requester123` | Maria, ₱5,000 credit |
+|  Requester 2 | `requester2` | `requester123` | Jose, already in a trip |
 
 The demo data includes one trip at every stage: open, funding, shopping (with a pending substitute), pickup (with an open dispute), cancelled (with apology credits), and done (with the full ledger).
 
 > [!WARNING]
 > These are public demo credentials. On a real deployment, set `DEMO_MODE` to `false` and change the admin password straight away.
 
-## ⚙️ Getting started
+##  Getting started
 
 **Requirements:** PHP 8.1+ (it uses `match`) with `mysqli` and `gd`, MySQL or MariaDB, and Apache with `.htaccess` support. It runs on XAMPP or shared hosting such as Hostinger. HTTPS is needed for the installable PWA.
 
 1. **Create a database** and user (in hPanel → Databases, or phpMyAdmin on XAMPP).
 2. **Import** `database/neighborhoodmart.sql` in phpMyAdmin.
-   > ⚠️ The import drops and recreates all tables. Demo dates are relative to the import time, so open trips stay open.
+   >  The import drops and recreates all tables. Demo dates are relative to the import time, so open trips stay open.
 3. **Configure** `config/config.php`: set `DB_HOST`, `DB_USER`, `DB_PASS` and `DB_NAME`. In production, set `DEBUG` and `DEMO_MODE` to `false`.
 4. **Upload** everything to `public_html/`, keeping the folder structure and including `uploads/`. Give `uploads/` permission `755` so PHP can save photos.
 5. **Log in** as `admin` / `admin123` and change the password on the Account page.
@@ -118,7 +118,7 @@ Upgrading an older database without re-importing it? Run this once:
 ALTER TABLE users ADD guided TINYINT NULL AFTER last_mode;
 ```
 
-## 🗂 Project structure
+##  Project structure
 
 ```
 nm/
@@ -147,7 +147,7 @@ nm/
 
 **How a request flows:** `index.php` loads the core and services, checks `config/routes.php`, then runs a single `actions/<name>.php` (for POST, CSRF-checked) or renders a single `pages/<name>.php` (for GET) inside the layout. Business rules live only in `services/`.
 
-## 🔐 Security notes
+##  Security notes
 
 - CSRF tokens on every POST, plus role-based access control in `config/routes.php`
 - Uploaded photos are type-checked by their real file type (JPG/PNG/WEBP/PDF, max 12 MB), auto-rotated, and resized to 1600px
@@ -157,11 +157,11 @@ nm/
 > [!IMPORTANT]
 > Don't commit real database credentials. Keep the placeholder values in `config/config.php`, or move secrets out of the repo, before pushing.
 
-## 🛠 Tech stack
+##  Tech stack
 
 Plain **PHP 8** with no framework and no Composer dependencies, **MySQL/MariaDB** through `mysqli` prepared statements, and vanilla **HTML/CSS/JS**. It also has a service worker for offline and install support, and SVG charts rendered on the server, with no CDN needed.
 
-## 🙏 Credits
+##  Credits
 
 Built for the residents of **Soluna Executive Village**. Chanelly the mascot is NeighborhoodMart's own guide. 🐶
 

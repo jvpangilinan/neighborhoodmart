@@ -1,0 +1,14 @@
+{
+  "name": "NeighborhoodMart",
+  "short_name": "NbhdMart",
+  "description": "Community bulk co-buying for Soluna Executive Village",
+  "start_url": "index.php",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f4ef",
+  "theme_color": "#1b7a4b",
+  "icons": [
+    {"src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

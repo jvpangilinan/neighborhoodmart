@@ -1,0 +1,3 @@
+<?php // SCREEN (HOA/admin): post an announcement + audit log. ?>
+<div class="grid"><div class="card"><h3>New announcement</h3><?= form('post_announcement') ?><div class="f"><label>Title<input name="title" required></label><label>Message<textarea name="body" required></textarea></label><button>Post</button></div></form></div>
+<div class="card"><h3>Audit log (latest 30)</h3><table><?php foreach(rows("SELECT a.*,u.name FROM audit a LEFT JOIN users u ON u.id=a.user_id ORDER BY a.created_at DESC,a.id DESC LIMIT 30") as $x) echo '<tr><td><small>'.when($x['created_at']).'</small></td><td><small>'.h($x['name']??'system').'</small></td><td><small>'.h($x['action']).'</small></td></tr>'; ?></table></div></div>

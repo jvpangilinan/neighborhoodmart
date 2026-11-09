@@ -1,0 +1,2 @@
+</main><footer class="wrap center" style="padding-bottom:32px"><small>NeighborhoodMart · Soluna Executive Village pilot · <a href="?p=rules">Rules &amp; Data Privacy</a></small></footer><?php require ROOT.'/views/help.php'; require ROOT.'/views/guide.php'; ?><script src="<?=asset('assets/guide.js')?>"></script><script src="<?=asset('assets/app.js')?>"></script>
+<?php if(DEMO_MODE): ?><script src="<?=asset('assets/tour.js')?>"></script><?php endif; ?></body></html>
